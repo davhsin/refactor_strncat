@@ -222,7 +222,6 @@ char *strcat(char *dest, const char *src)
 EXPORT_SYMBOL(strcat);
 #endif
 
-// Old version
 #ifndef __HAVE_ARCH_STRNCAT
 char *strncat(char *dest, const char *src, size_t count)
 {
