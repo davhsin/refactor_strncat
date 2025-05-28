@@ -1,0 +1,5 @@
+config STRNCAT_TEST 
+    tristate "strncat test module"
+    default m
+    help
+      A simple kernel module that test strncat 

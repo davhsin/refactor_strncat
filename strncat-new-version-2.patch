@@ -1,0 +1,29 @@
+diff --git a/lib/string.c b/lib/string.c
+index eb4486ed40d2..d58e48f114f2 100644
+--- a/lib/string.c
++++ b/lib/string.c
+@@ -226,16 +226,14 @@ char *strncat(char *dest, const char *src, size_t count)
+ {
+ 	char *tmp = dest;
+ 
+-	if (count) {
+-		while (*dest)
+-			dest++;
+-		while ((*dest++ = *src++) != 0) {
+-			if (--count == 0) {
+-				*dest = '\0';
+-				break;
+-			}
+-		}
+-	}
++	while (*dest)
++		dest++;
++	
++	while (count-- && *src)
++		*dest++ = *src++;
++
++	*dest = '\0';
++
+ 	return tmp;
+ }
+ EXPORT_SYMBOL(strncat);
